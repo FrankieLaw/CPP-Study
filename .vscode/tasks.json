@@ -9,7 +9,7 @@
                 "-E",
                 "${file}",
                 ">",
-                "preprocessor_${fileBasenameNoExtension}.txt",
+                "${fileBasenameNoExtension}.txt",
                 "&",
                 "g++",
                 "-g",
