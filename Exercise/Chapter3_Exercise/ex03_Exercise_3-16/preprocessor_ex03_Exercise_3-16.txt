@@ -1,8 +1,8 @@
-# 0 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Review\\ex03_Review_3-16\\ex03_Review_3-16.cpp"
+# 0 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\ex03_Exercise_3-16.cpp"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Review\\ex03_Review_3-16\\ex03_Review_3-16.cpp"
-# 57 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Review\\ex03_Review_3-16\\ex03_Review_3-16.cpp"
+# 1 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\ex03_Exercise_3-16.cpp"
+# 54 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\ex03_Exercise_3-16.cpp"
 # 1 "C:/msys64/mingw64/include/c++/12.1.0/iostream" 1 3
 # 36 "C:/msys64/mingw64/include/c++/12.1.0/iostream" 3
        
@@ -32125,7 +32125,7 @@ namespace std
 
 
 }
-# 58 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Review\\ex03_Review_3-16\\ex03_Review_3-16.cpp" 2
+# 55 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\ex03_Exercise_3-16.cpp" 2
 
 # 1 "C:/msys64/mingw64/include/c++/12.1.0/ctime" 1 3
 # 39 "C:/msys64/mingw64/include/c++/12.1.0/ctime" 3
@@ -32148,180 +32148,57 @@ namespace std
   using ::localtime;
   using ::strftime;
 }
-# 60 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Review\\ex03_Review_3-16\\ex03_Review_3-16.cpp" 2
+# 57 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\ex03_Exercise_3-16.cpp" 2
+# 1 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\HeartRates.h" 1
 
-# 60 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Review\\ex03_Review_3-16\\ex03_Review_3-16.cpp"
+
+
+
+
+
+
+# 7 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\HeartRates.h"
 using namespace std;
 
 class HeartRates {
     public:
-        HeartRates( string date ) {
-            int _y = stoi(date.substr( 6, 4 ));
-            int _m = stoi(date.substr( 0, 2 ));
-            int _d = stoi(date.substr( 3, 2 ));
-
-            setYear( _y );
-            setMonth( _m );
-            setDay( getMonth( ), _d );
-
-            string tempM = to_string( getMonth( ) );
-            string tempD = to_string( getDay( ) );
-            string tempY = to_string( getYear( ) );
-
-            setDate( tempM + " " + tempD + " " + tempY );
-        }
+        HeartRates( string date );
 
 
 
 
-    void setFirstName( string _fName ) {
-        firstName = _fName;
-    }
-    void setLastName( string _lName ) {
-        lastName = _lName;
-    }
-    void setDate( string _date ) {
-        date = _date;
-    }
+        void setFirstName( string _fName );
+        void setLastName( string _lName );
+        void setDate( string _date );
 
-    string getFirstName( ) { return firstName; }
-    string getLastName( ) { return lastName; }
-    string getDate( ) {
-        string _m = to_string( getMonth( ) );
-        string _d = to_string( getDay( ) );
-        string _y = to_string( getYear( ) );
+        string getFirstName( );
+        string getLastName( );
+        string getDate( );
 
-        return _m + " " + _d + " " + _y;
-    }
-
-    int getAge( ) {
-        time_t now = time( 0 );
-        tm *local = localtime( &now );
-
-        return ( 1900 + local->tm_year ) - year;
-    }
-    int getMaxiumumHeartRate( ) {
-        return 220 - getAge( );
-    }
-    string getTargetHeartRate( ) {
-        int minRate = getMaxiumumHeartRate( ) * 0.50;
-        int maxRate = getMaxiumumHeartRate( ) * 0.85;
-
-        return to_string( minRate ) + "-" + to_string( maxRate );
-    }
+        int getAge( );
+        int getMaxiumumHeartRate( );
+        string getTargetHeartRate( );
 
 
 
 
-    void setMonth(int _m) {
-        if (_m >= 1 && _m <= 12) {
-            month = _m;
-        } else {
-            cout << "Month out of range " << _m
-                 << ": default to Janurary" << endl;
-            month = 1;
-        }
-    }
-    int getMonth( ) {
-        return month;
-    }
+        void setMonth( int _m );
+        int getMonth( );
 
 
 
 
 
-    void setDay( int _m, int _d ) {
-        int months[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        bool errorFlag = false;
+        void setDay( int _m, int _d );
+        int getDay( );
 
+        void setYear( int _y );
+        int getYear( );
 
+        bool isLeapYear( );
+        bool getLeapYear( );
 
-        if( leapYear && _m == 2 ) {
-            if( _d >= 1 && _d <= 29 ) {
-                day = _d;
-            } else {
-                errorFlag = true;
-            }
-
-
-
-        } else {
-            if( _d >= 1 && _d <= months[_m -1] ) {
-                day = _d;
-            } else {
-                errorFlag = true;
-            }
-        }
-
-
-
-        if( errorFlag ) {
-            cout << "Day is out of range: Default to 1" << endl;
-            day = 1;
-        }
-    }
-    int getDay( ) {
-        return day;
-    }
-
-
-
-
-
-    void setYear( int _y ) {
-
-        if (_y < 1582 || _y > 2400 ) {
-            cout << "Invalid Year Range " << _y
-                 << "(1584-2400): Default to year 2000" << endl;
-            year = 2000;
-        } else {
-            year = _y;
-        }
-
-
-        leapYear = isLeapYear( );
-    }
-    int getYear( ) {
-        return year;
-    }
-
-
-
-
-    bool isLeapYear( ) {
-        bool retValue = false;
-
-
-        if( year % 4 == 0 ) {
-            retValue = true;
-
-            if( year % 100 == 0 ) {
-                retValue = false;
-
-                if( year % 400 == 0 ) {
-                    retValue = true;
-                }
-            }
-        }
-
-        return retValue;
-    }
-    bool getLeapYear( ) {
-        return leapYear;
-    }
-
-    void displayHeartRates( ) {
-        cout << "First Name: " << getFirstName( ) << endl;
-        cout << "Last Name: " << getLastName( ) << endl;
-        cout << "DOB: " << getDate( ) << endl;
-        cout << "Age: " << getAge( ) << endl;
-        cout << "Maximum Heart Rate: " << getMaxiumumHeartRate( ) << endl;
-        cout << "Target Heart Rate: " << getTargetHeartRate( ) << endl;
-
-
-
-
-    }
+        void displayHeartRates( );
 
     private:
         string firstName;
@@ -32332,7 +32209,8 @@ class HeartRates {
         int year;
         bool leapYear;
 };
-
+# 58 "C:\\Users\\Frankie\\Desktop\\Computer Science\\CPP Projects\\Exercise\\Chapter3_Exercise\\ex03_Exercise_3-16\\ex03_Exercise_3-16.cpp" 2
+using namespace std;
 
 void displayTestHeading(string text)
 {

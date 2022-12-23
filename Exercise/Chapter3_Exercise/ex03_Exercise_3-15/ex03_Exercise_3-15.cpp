@@ -1,4 +1,4 @@
-// ex03_Review_3-15.cpp
+// ex03_Exercise_3-15.cpp
 // Date Class that holds one specific date.
 // 
 // (Date Class) Create a class called Date that includes three pieces

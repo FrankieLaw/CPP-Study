@@ -1,4 +1,4 @@
-// ex03_Review_3-14.cpp
+// ex03_Exercise_3-14.cpp
 //
 // (Employee Class) Create a class called Employee that includes 
 // three pieces of information as data members:
