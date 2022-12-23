@@ -35,12 +35,10 @@ public:
     // CONSTRUCTOR
     Account(int startingBalance)
     {
-        if (startingBalance >= 0)
-        {
+        if (startingBalance >= 0) {
             balance = startingBalance;
         }
-        else
-        {
+        else {
             balance = 0;
             cout << "Error: Balance cannot be less than 0" << endl;
         }
@@ -49,8 +47,7 @@ public:
     }
 
     // Credit Member Function
-    void credit(int amount)
-    {
+    void credit(int amount) {
         balance += amount;
         displayBalanceMessage();
     }
@@ -87,6 +84,7 @@ private:
     int balance;
 };
 
+
 void displayTestHeading(string text)
 {
     cout << "\n";
@@ -95,8 +93,7 @@ void displayTestHeading(string text)
     cout << "*******************************" << endl;
 }
 
-int main()
-{
+int main( ) {
     displayTestHeading("Instantiating Accounts");
     Account davidAccount(500);
     Account steveAccount(12500);
