@@ -1,3 +1,7 @@
+#include <string>
+#include <iostream>
+using namespace std;
+
 void displayTestHeading(string text)
 {
     cout << "\n";
