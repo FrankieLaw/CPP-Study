@@ -2,3 +2,4 @@
 option_compiler/
 Output/sandbox.exe
 Examples/Experimentation/
+Exercise/*/*.s
