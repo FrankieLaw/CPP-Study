@@ -1,3 +1,4 @@
+# Ignore Compiler Options
 option_compiler/
 Output/sandbox.exe
 Examples/Experimentation/
