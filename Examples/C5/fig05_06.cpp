@@ -8,7 +8,7 @@ using namespace std;
 int main( ) {
     double amount;
     double principal = 1000.0;
-    double rate = 0.5;
+    double rate = 0.05;
 
     cout << "Year" << setw( 21 ) << "Amount on deposit" << endl;
 
