@@ -19,10 +19,6 @@ int main( ) {
     cout << "Enter the number of inputs: ";
     cin >> input;
 
-    // cout << endl;
-    // cout << cin.good( ) << endl;        // good - input 'a' result 0
-    //                                     // good - input 3 result 1
-
     while( input != 0 ) {
         do {
             cin.clear( );
